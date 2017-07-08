@@ -1,0 +1,36 @@
+<ion-content>
+
+  
+
+    <ion-slides>
+                <ion-slide>
+                    <div class="diag" style="background: url('assets/img/1.png') no repeat">
+                        <ion-icon ios="ios-car" md="md-car" color="primary"></ion-icon>
+                    </div>
+                    <div>
+                        <h2>Bienvenido</h2>
+                        <p>Mi Cupo, un aplicativo móvil, donde podrás disfrutar del uso del carro compartido para la comunidad universitaria. </p>
+                     </div>                
+                </ion-slide>
+                        <ion-slide>
+                            <div class="diag" style="background: url('assets/img/2.png') no repeat">
+                                 <ion-icon ios="ios-clock" md="md-clock" color="primary"></ion-icon>
+                            </div>
+                                    <div>
+                                        <h2>Nos alegra tenerte aqui</h2>
+                                        <p>Reduce los tiempos de espera y los largos trayectos de tu ruta de transporte público, y llega en menor tiempo a tu lugar de destino.</p>
+                                    </div>  
+                        </ion-slide>
+
+                            <ion-slide>
+                                    <div class="diag" style="background: url('assets/img/3.png') no repeat">
+                                        <ion-icon ios="ios-people" md="md-people" color="primary"></ion-icon>
+                                    </div>
+                                        <div>
+                                            <h2>Encuentra Coincidencias De Destino</h2>
+                                            <p>Busca tus viajes con personas que compartan su carro con alguien mas de tu universidad y compartan el mismo destino.</p>
+                                        </div>
+                            </ion-slide>                
+    </ion-slides>
+           <button (click)="skip()" id="skip">{{ skipMsg }}</button>        
+</ion-content>

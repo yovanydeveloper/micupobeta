@@ -1,0 +1,106 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content class="background">
+<ion-card-header>
+   <div class="cabezera">
+<img src="../../assets/img/logo.png">
+   </div>
+</ion-card-header>
+</ion-content>
+<ion-content>
+<ion-fab top right>
+    <button ion-fab mini block (click)="signup()" color="favorite" ><ion-icon name="add"></ion-icon></button>
+  
+  </ion-fab>
+</ion-content>
+<ion-content>
+  <ion-list class="formulario">
+         
+        
+             <h2 ion-text color="dark">Iniciar Sesión</h2>
+            <ion-item>
+            <ion-icon name="mail" item-start></ion-icon>
+            <ion-input type="email" floating name="Correo" placeholder="Correo Institucional" clearInput="true" required></ion-input>
+            </ion-item>
+     
+
+            <ion-item>
+            <ion-icon name="lock" item-start></ion-icon>
+            <ion-input type="password" name= "Pass" placeholder="Contraseña" clearInput="true" required ></ion-input>
+            </ion-item>
+             <div padding>
+        <button  ion-button color="primary"  block (click)="login()">
+          Siguiente
+        </button>
+      </div>     
+        <p>¿Olvidaste tu Contraseña?</p>
+  </ion-list>
+</ion-content>
+
+
+
+ <!--
+  <div class="auth-content">
+
+    <div class="light-bg">
+
+      Logo 
+      <div padding text-center>
+        <div class="logo primary-bg">
+          <i class="icon-sedan" ion-text color="light" ></i>
+        </div>
+        <h2 ion-text color="dark" >
+          Mi Cupo
+        </h2>
+        <p ion-text color="dark" >Carro Compartido en tu universidad</p>
+      </div>
+
+      <!-- Login form 
+      <ion-list class="list-form" padding>
+
+        <ion-item>
+          <ion-input style="border-bottom-color:#00ccff;box-shadow:none;" type="text" placeholder="Correo Institucional"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input style="border-bottom-color:#00ccff;background:none" type="password" placeholder="Contraseña"></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+      <div padding>
+        <button  ion-button color="primary"  block (click)="login()">
+          Entrar
+        </button>
+         <div text-center style="background:none">No tienes Cuenta:</div>
+        <button  ion-button color="primary"  block (click)="signup()">
+          Registrarme
+        </button>
+      </div>
+
+    </div>
+
+    <div padding=""></div>
+
+    <!-- Other links 
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <span ion-text color="light" >OLvidaste tu contraseña?</span>
+        </ion-col>
+        <ion-col>
+          <span ion-text color="light" >
+            Click aqui
+            <span ion-text color="primary"  (click)="signup()" background="none">Registrarte</span>
+          </span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+  -->
+<!--</ion-content>-->

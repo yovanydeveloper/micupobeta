@@ -1,0 +1,44 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content class="background">
+<ion-card-header>
+   <div class="cabezera">
+ <h2 ion-text color="light">Registro</h2>
+   </div>
+</ion-card-header>
+</ion-content>
+<ion-content>
+<ion-fab top right>
+    <button ion-fab mini block (click)="signup()" color="favorite" ><ion-icon name="arrow-back"></ion-icon></button>
+  
+  </ion-fab>
+</ion-content>
+<ion-content>
+  <ion-list class="formulario">
+         
+        
+        <p class="titulo">Ingresa tu correo institucional</p>
+                    <ion-item>
+             <ion-icon name="mail" item-start></ion-icon>
+            <ion-input type="email" floating name="Correo" placeholder="Correo Institucional" clearInput="true" required></ion-input>
+            </ion-item>
+             <div padding>
+        <button  ion-button color="favorite"  block (click)="login()">
+         <ion-icon name="arrow-forward" item-start></ion-icon>
+        </button>
+      </div>     
+    <p>Recuerda que para utilizar los beneficios de Mi Cupo.<br>Debes pertenecer a la Comunidad Universitaria</p>
+  </ion-list>
+</ion-content>
+

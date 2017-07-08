@@ -1,0 +1,31 @@
+<!--
+  Generated template for the PaymentMethodPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar  color="primary" >
+    <ion-title>Metodos de Pago</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="list-full-border" radio-group>
+    <ion-item>
+      <ion-label>
+        Efectivo
+        <p class="text-hint">Usar Efectivo</p>
+      </ion-label>
+      <ion-radio checked="true" value="A" (click)="changeMethod('cash')"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        Tarjeta de Credito
+        <p class="text-hint">Usar Tarjeta</p>
+      </ion-label>
+      <ion-radio value="B" (click)="changeMethod('card')"></ion-radio>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,99 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary" >
+    <button  ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Mi Cupo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content  scroll="false">
+  <!-- Show map here --> 
+  <div id="{{ mapId }}" [ngStyle]="{height: mapHeight + 'px'}"></div>
+
+  <div class="modal-bg black-transparent" [hidden]="!showModalBg"></div>
+
+   <!--Choose pickup and drop off places
+  <ion-list class="map-overlay list-full-border">
+    <ion-item (click)="choosePlace()">
+      <span class="label" ion-text color="secondary" >Recogida</span>
+      <div class="bold">Universidad Tecnologica de Pereira</div>
+    </ion-item>
+    <ion-item (click)="choosePlace()">
+      <span class="label" ion-text color="secondary" >DROP-OFF</span>
+      <div class="italic">Indicar lugar de destino</div>
+    </ion-item>
+  </ion-list>
+-->
+  <!-- Booking information -->
+  <div class="booking-info">
+      <button  ion-button color="primary"  block (click)="book()" color="favorite">Programar Viaje</button>
+    <!--
+    <button  ion-button color="primary"  class="button-circle button-next" [hidden]="showForm" (click)="toggleForm()">
+      NEXT
+</button>
+-->
+
+    <div padding [ngClass]="{'stable-bg': !showForm, 'light': showForm}"></div>
+ <!--   <ion-grid no-padding [hidden]="showForm">
+      <ion-row class="vehicles" text-center>
+        <ion-col class="item-vehicle" *ngFor="let vehicle of vehicles; let i = index" [ngClass]="{'active': vehicle.active}"
+                 (click)="toggleVehicle(i)">
+          <i class="{{ vehicle.icon }}"></i>
+          <span>{{ vehicle.name }}</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-list class="booking-form stable-bg list-full-border padding-10" no-margin [hidden]="!showForm">
+      <ion-item>
+        <ion-icon name="cash" item-left></ion-icon>
+        <div (click)="choosePaymentMethod()">
+          <div>Pago</div>
+          <span class="bold">Cash</span>
+        </div>
+        <ion-icon name="md-arrow-dropright" item-right></ion-icon>
+      </ion-item>
+
+      <ion-item class="button-set">
+
+        <ion-grid>
+          <ion-row>
+
+            <ion-col>
+              <button  ion-button class="active" block padding>Recoger Ahora</button>
+            </ion-col>
+
+            <ion-col>
+              <button  ion-button block>Recoger Más tarde</button>
+            </ion-col>
+
+          </ion-row>
+        </ion-grid>
+
+      </ion-item>
+
+      <ion-item (click)="showNotePopup()">
+        <ion-icon name="ios-create-outline" item-left></ion-icon>
+        <span class="italic" ion-text color="dark"  [hidden]="note">Dejar nota al conductor</span>
+        <span ion-text color="dark"  [hidden]="!note">{{ note }}</span>
+      </ion-item>
+
+      <ion-item (click)="showPromoPopup()">
+        <ion-icon name="pricetag" item-left></ion-icon>
+        <span class="italic" ion-text color="dark"  [hidden]="promo">Ingresar PIN</span>
+        <span ion-text color="dark"  [hidden]="!promo">{{ promo }}</span>
+      </ion-item>
+
+    
+    </ion-list>
+-->
+  </div>
+
+</ion-content>
