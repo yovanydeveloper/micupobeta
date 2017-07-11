@@ -1,12 +1,17 @@
-page-login,
-{
-    
+page-login{
+
 ion-card-header {
     background: #000000;
-   
+-webkit-box-shadow: -1px 5px 34px 1px rgba(0,0,0,0.73);
+-moz-box-shadow: -1px 5px 34px 1px rgba(0,0,0,0.73);
+box-shadow: -1px 5px 34px 1px rgba(0,0,0,0.73);
     height: 120px;
-    margin-top: 3px;
-   
+    width: 100%;
+    margin-top: 0   px;
+   border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+border: 0px solid #000000;
     margin-bottom: 3px;
     }
 .formulario{
@@ -18,6 +23,7 @@ ion-card-header {
     background-color: #ffffff;
     border-radius: 0px;
     margin-top: 50%;
+       margin-bottom: 5%;
   position: relative;
   text-align: left;
   p{
@@ -32,17 +38,16 @@ h2{
 }
 ion-icon{
     font-size: 1em;
+   margin-top: 12%;
 }
-ion-label{
- width: 55%;
- position: relative;    
-}
+
 }
 .boton{
     margin-left: 15%;
     margin-right: 10%;
     padding: 0.7rem;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    
 }
 
 
@@ -52,33 +57,29 @@ ion-label{
 .cabezera img{
 width: 100px;
     height: 100px;
-    
     margin-right: 15px;
     margin-left: 15px;
-
     margin-bottom: 250px;
    position:relative;
 }
+
+
 .background{
     width: 100%;
     height: 100%;
       background: #ffffff;
-}
+}    
 ion-fab{
     margin-top: 85px;
-    margin-left: 100px;
+    margin-left: 1  00px;
     margin-right: 25px;
-    
-    
-}
-ion-header{
-    background: #373737;
-     width: 100%;
-     height: 17%;
- 
 }
 
 
+.grande{
+    width: 120px;
+    height: 120px;
+}
 
 .scroll-content{
 text-align: center;

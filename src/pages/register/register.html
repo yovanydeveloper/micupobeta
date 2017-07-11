@@ -31,13 +31,15 @@
         <p>Hola.¿Como te llamas?</p>
                     <ion-item>
              <ion-icon name="person" item-start></ion-icon>
-            <ion-input type="text" floating name="Nombres" placeholder="Nombres" clearInput="true" required></ion-input>
+             <ion-label floating>Nombres</ion-label>
+            <ion-input type="text"  name="Nombres"  clearInput="true" required></ion-input>
             </ion-item>
      
 
             <ion-item>
             <ion-icon name="person-add" item-start></ion-icon>
-            <ion-input type="text" name= "Apellidos" placeholder="Apellidos" clearInput="true" required ></ion-input>
+            <ion-label floating>Apellidos</ion-label>
+            <ion-input type="text" name= "Apellidos"  clearInput="true" required ></ion-input>
             </ion-item>
              <div padding>
         <button  ion-button color="favorite"  block (click)="loginup()">

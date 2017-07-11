@@ -4,7 +4,7 @@ page-tuto{
 @import url('https:fonts.googleapis.com/css?family=Raleway:300.700');
 
 ion-content {
-background-color: #EFEFEF !important;
+background-color: #ffffff !important;
  font-family: 'Raleway';
 }
 
@@ -14,15 +14,15 @@ background-color: #EFEFEF !important;
     width: 100%;
     top: 0;
     height: 66%;
-}
-.scroll-bar-indicator
-{
-	display: none;
-}
-ion-icon{
+    img{
     margin-top: 40%;
     font-size: 7em;
+    width: 60%;
+    height: 60%;
 }
+}
+
+
 h2{
     margin-top: 80% !important;
     font-weight: bold;
@@ -36,7 +36,7 @@ p{
     font-size: .9em;
 }
 .swiper-pagination-bullet-active{
-    background: #373737;
+    background:  #009dd6;
 }
 .swiper-pagination {
     bottom: 12% !important;

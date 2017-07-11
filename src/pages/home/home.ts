@@ -17,6 +17,9 @@ declare var google: any;
 })
 export class HomePage {
   // map id
+//splash = true;
+  //tabBarElement: any;
+
   public mapId = Math.random() + 'map';
 
   // map height
@@ -28,6 +31,7 @@ export class HomePage {
   // show - hide modal bg
   public showModalBg: boolean = false;
 
+   
   // list vehicles 
  
   //* public vehicles: any = [
@@ -57,19 +61,32 @@ export class HomePage {
   // Map
   public map: any;
 
-  constructor(public nav: NavController, public platform: Platform, public alertCtrl: AlertController) {
-  }
+  constructor(public nav: NavController, public platform: Platform, public alertCtrl: AlertController ) {
+ // this.tabBarElement = document.querySelector('.tabbar');
+}
+/*
+   ionViewDidLoad() {
+   // this.tabBarElement.style.display ='none';
+     setTimeout(() => {
+  //     this.splash = false;
+   // this.tabBarElement.style.display ='flex';
+     },4000);
+   }
 
+/*
   ionViewDidLoad() {
     // init map
     this.initializeMap();
   }
-
+*/
   // toggle form
   toggleForm() {
     this.showForm = !this.showForm;
     this.showModalBg = (this.showForm == true);
   }
+
+
+
 
   // toggle active vehicle
  // toggleVehicle(index) {

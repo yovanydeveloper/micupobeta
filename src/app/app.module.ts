@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 
 // import services
 import {DriverService} from '../services/driver-service';
@@ -11,10 +12,12 @@ import {TripService} from '../services/trip-service';
 // end import services
 
 // import pages
+
 import { DriverPage} from '../pages/driver/driver';
 import { FindingPage} from '../pages/finding/finding';
 import { HistoryPage} from '../pages/history/history';
 import { HomePage} from '../pages/home/home';
+import { InicioPage} from '../pages/inicio/inicio';
 import { CorreoPage} from '../pages/correo/correo';
 import { PasswordPage} from '../pages/password/password';
 import { MovilPage} from '../pages/movil/movil';
@@ -37,6 +40,7 @@ import { TrackingPage} from '../pages/tracking/tracking';
     FindingPage,
     HistoryPage,
     HomePage,
+    InicioPage,
     LoginPage,
     ModalRatingPage,
     NotificationPage,
@@ -62,6 +66,7 @@ import { TrackingPage} from '../pages/tracking/tracking';
     FindingPage,
     HistoryPage,
     HomePage,
+    InicioPage,
     LoginPage,
     ModalRatingPage,
     NotificationPage,
@@ -80,7 +85,6 @@ import { TrackingPage} from '../pages/tracking/tracking';
     DriverService,
     NotificationService,
     PlaceService,
-    TripService
     /* import services */
 ]
 })

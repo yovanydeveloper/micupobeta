@@ -4,6 +4,7 @@ import {ViewChild} from '@angular/core';
 import {StatusBar} from 'ionic-native';
 
 // import pages
+
 import {LoginPage} from '../pages/login/login';
 import {CorreoPage} from '../pages/correo/correo';
 import {RegisterPage} from '../pages/register/register';
@@ -11,9 +12,11 @@ import {MovilPage} from '../pages/movil/movil';
 import {PasswordPage} from '../pages/password/password';
 import {TutoPage} from '../pages/tuto/tuto';
 import {HomePage} from '../pages/home/home';
+import {InicioPage} from '../pages/inicio/inicio';
 import {HistoryPage} from '../pages/history/history';
 import {NotificationPage} from '../pages/notification/notification';
 import {SupportPage} from '../pages/support/support';
+
 
 @Component({
   templateUrl: 'app.html',
@@ -61,7 +64,7 @@ export class MyApp {
   ];
 
   constructor(public platform: Platform) {
-    this.rootPage = HomePage;
+    this.rootPage = InicioPage;
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

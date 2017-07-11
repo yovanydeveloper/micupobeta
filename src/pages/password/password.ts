@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { MenuController, IonicPage, NavController, NavParams } from 'ionic-angular';
 import {TutoPage} from "../tuto/tuto";
 import {MovilPage} from "../movil/movil";
 /**
@@ -14,7 +14,7 @@ import {MovilPage} from "../movil/movil";
   templateUrl: 'password.html',
 })
 export class PasswordPage {
-  constructor(public nav: NavController) {}
+  constructor(public nav: NavController,public menu: MenuController) {}
 
   signup() {
     this.nav.setRoot(MovilPage);
@@ -23,4 +23,13 @@ export class PasswordPage {
   login() {
     this.nav.setRoot(TutoPage);
   }
+   ionViewDidEnter() {
+    // the root left menu should be disabled on the tutorial page
+    this.menu.enable(false);
+  }
+
+  ionViewDidLeave() {
+    // enable the root left menu when leaving the tutorial page
+    this.menu.enable(true);
+  } 
 }

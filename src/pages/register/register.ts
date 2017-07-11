@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {  MenuController, NavController } from 'ionic-angular';
 import {LoginPage} from '../login/login';
 import {CorreoPage} from "../correo/correo";
 
@@ -14,7 +14,7 @@ import {CorreoPage} from "../correo/correo";
   templateUrl: 'register.html'
 })
 export class RegisterPage {
-  constructor(public nav:NavController) {
+  constructor(public nav:NavController,public menu: MenuController) {
   }
 
   signup() {
@@ -23,5 +23,13 @@ export class RegisterPage {
 
   loginup() {
     this.nav.setRoot(CorreoPage);
+  }
+  ionViewDidEnter() {
+    // esconder menu lateral
+    this.menu.enable(false);
+  }
+    ionViewDidLeave() {
+    // enable the root left menu when leaving the tutorial page
+    this.menu.enable(true);
   }
 }
