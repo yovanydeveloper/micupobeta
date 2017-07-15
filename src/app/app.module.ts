@@ -1,21 +1,21 @@
-import { NgModule } from '@angular/core';
-import { IonicApp, IonicModule } from 'ionic-angular';
+import { NgModule, ErrorHandler } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
-
 // import services
 import {DriverService} from '../services/driver-service';
 import {NotificationService} from '../services/notification-service';
 import {PlaceService} from '../services/place-service';
-import {TripService} from '../services/trip-service';
 // end import services
 
-// import pages
 
+
+// import pages
+import { Data } from '../providers/data/data';
 import { DriverPage} from '../pages/driver/driver';
 import { FindingPage} from '../pages/finding/finding';
-import { HistoryPage} from '../pages/history/history';
+import { RegistroViajePage} from '../pages/registrov/registrov';
 import { HomePage} from '../pages/home/home';
 import { InicioPage} from '../pages/inicio/inicio';
 import { CorreoPage} from '../pages/correo/correo';
@@ -23,11 +23,8 @@ import { PasswordPage} from '../pages/password/password';
 import { MovilPage} from '../pages/movil/movil';
 import { LoginPage} from '../pages/login/login';
 import { TutoPage} from '../pages/tuto/tuto';
-import { ModalRatingPage} from '../pages/modal-rating/modal-rating';
 import { NotificationPage} from '../pages/notification/notification';
-import { PaymentMethodPage} from '../pages/payment-method/payment-method';
 import { PlacesPage} from '../pages/places/places';
-import { ProfilePage} from '../pages/profile/profile';
 import { RegisterPage} from '../pages/register/register';
 import { SupportPage} from '../pages/support/support';
 import { TrackingPage} from '../pages/tracking/tracking';
@@ -38,25 +35,24 @@ import { TrackingPage} from '../pages/tracking/tracking';
     MyApp,
     DriverPage,
     FindingPage,
-    HistoryPage,
+    RegistroViajePage,
     HomePage,
     InicioPage,
     LoginPage,
-    ModalRatingPage,
     NotificationPage,
-    PaymentMethodPage,
     PlacesPage,
-    ProfilePage,
     RegisterPage,
     CorreoPage,
     MovilPage,
     PasswordPage,
     TutoPage,
-    SupportPage,
-    TrackingPage
+    TrackingPage,
+    SupportPage
 ],
   imports: [
     BrowserModule,
+    HttpModule,
+    
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -64,27 +60,26 @@ import { TrackingPage} from '../pages/tracking/tracking';
     MyApp,
     DriverPage,
     FindingPage,
-    HistoryPage,
+    RegistroViajePage,
     HomePage,
     InicioPage,
     LoginPage,
-    ModalRatingPage,
     NotificationPage,
-    PaymentMethodPage,
     PlacesPage,
-    ProfilePage,
     RegisterPage,
     CorreoPage,
     PasswordPage,
     MovilPage,
     TutoPage,
-    SupportPage,
-    TrackingPage
+    TrackingPage,
+    SupportPage
 ],
   providers: [
     DriverService,
     NotificationService,
     PlaceService,
+    Data,
+    {provide: ErrorHandler, useClass: IonicErrorHandler} 
     /* import services */
 ]
 })

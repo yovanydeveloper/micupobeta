@@ -1,0 +1,61 @@
+<!--
+  Generated template for the HistoryPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- cabezera-->
+<ion-header>
+  <ion-navbar color="primary" >
+        <button  ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title color>Registrar Viaje</ion-title>
+  </ion-navbar>
+</ion-header>
+<!-- formulario de registro de viajes-->
+<ion-content padding class="viajes">
+    <form [formGroup]="authForm" (ngSubmit)="submitForm(authForm.value)">
+<!-- infomacion de destino-->  
+      <ion-item>
+            <ion-label floating>Destino</ion-label>
+            <ion-input type="text" value="" [formControl]="authForm.controls['destino']" [ngClass]="{'error-border':!authForm.controls['destino'].valid}"></ion-input>         
+        </ion-item><br/>
+        <div class="error-box" *ngIf="authForm.controls['destino'].hasError('required') && authForm.controls['destino'].touched">* Tu destino es Requerido!</div>
+        <div class="error-box" *ngIf="authForm.controls['destino'].hasError('minlength') && authForm.controls['destino'].touched">* Minimo 5 Caracteres Requeridos!</div>
+		    <div class="error-box" *ngIf="authForm.controls['destino'].hasError('maxlength') && authForm.controls['destino'].touched">* Maximo de 50 Caracteres por Direccion!</div>
+<!-- definiendo el horario de salida-->
+       <div formGroupName="hora">
+        <ion-item>
+          <ion-label stacked>Horario de Salida</ion-label>
+          <ion-datetime displayFormat="h:mm:A" pickerFormat="h:mm:A"  formControlName="date"></ion-datetime>
+        </ion-item>
+      </div><br/>
+<!-- numero de cupos disponibles por vehiculo-->
+	<ion-list>
+			<ion-item>
+					<ion-label>Numero de Cupos</ion-label>
+				<ion-select [formControl]="authForm.controls['Cupos']">
+					<ion-option value="c1">1</ion-option>
+					<ion-option value="c2">2</ion-option>
+          <ion-option value="c3">3</ion-option>
+          <ion-option value="c4">4</ion-option>
+				</ion-select>
+			</ion-item>
+		</ion-list>
+<!-- placa del vehiculo-->
+        <ion-item>
+            <ion-label floating>Placa</ion-label>
+            <ion-input type="text" value="" [formControl]="authForm.controls['placa']" ></ion-input>
+        </ion-item>
+        <div class="error-box" *ngIf="authForm.controls['placa'].hasError('required') && authForm.controls['placa'].touched">* Tu Número De Placa Es Requerido !</div>
+        <div class="error-box" *ngIf="authForm.controls['placa'].hasError('minlength') && authForm.controls['placa'].touched">* Tu Número De Placa ingresado es menor a 6 caracteres !</div>
+		    <div class="error-box" *ngIf="authForm.controls['placa'].hasError('checkFirstCharacterValidatorOutput') && authForm.controls['placa'].touched">* Tu Placa no puede comenzar con un número !</div><br/>
+    	 <div class="error-box" *ngIf="authForm.controls['placa'].hasError('maxlength') && authForm.controls['placa'].touched">* Tú numero de placa debe ser Maximo de 7 Caracteres !</div>
+<!-- boton de restriccion campos completos obligatorios-->		
+   <button ion-button full color="favorite" type="submit" [disabled]="authForm.invalid" block (click)="login()">
+       <ion-icon name="arrow-round-up" item-start></ion-icon>
+    </button>
+</form>
+</ion-content>
+

@@ -88,18 +88,18 @@ export class TrackingPage {
   // show rating popup
   showRating() {
     let prompt = this.alertCtrl.create({
-      title: 'Gracias',
-      message: 'Nosotros esperamos que hallas disfrutado de tu trayecto, cualquier comentario, duda queja o reclamo, con gusto seran atendidas en el boton de sugerencias',
+      title: 'Solicitud Enviada',
+      message: 'El usuario indicado confirmara tu solicitud y te enviara toda la informacion del sitio y lugar de recogida',
       buttons: [
         {
-          text: 'Cancel',
+          text: 'Cancelar',
           handler: data => {
             console.log('Cancel clicked');
             this.nav.setRoot(HomePage);
           }
         },
         {
-          text: 'Submit',
+          text: 'Confirmar',
           handler: data => {
             console.log('Saved clicked');
             this.nav.setRoot(HomePage);

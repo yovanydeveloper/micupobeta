@@ -1,11 +1,11 @@
 export let DRIVERS = [
   {
     id: 1,
-    name: "Jhon henao",
-    plate: "000BN",
+    name: "Carlos Herrera",
+    plate: "012-BNR",
     brand: "Kia Picanto",
     distance: 0.6,
-    status: "Libre"
+    status: "1 cupo "
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export let DRIVERS = [
     plate: "889LG",
     brand: "mazda 3",
     distance: 0.6,
-    status: "2 cupos disponibles"
+    status: "2 cupos"
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ export let DRIVERS = [
     plate: "888HJ",
     brand: "Mazda 2",
     distance: 0.6,
-    status: "Ocupado"
+    status: "3 cupos"
   },
   {
     id: 4,
@@ -29,6 +29,6 @@ export let DRIVERS = [
     plate: "673JU",
     brand: "Twingo 2009",
     distance: 0.6,
-    status: "1 cupo disponible"
+    status: "4 cupos"
   },
 ];

@@ -1,227 +1,54 @@
-import {Component} from '@angular/core';
-import {NavController, Platform, AlertController} from 'ionic-angular';
-import {PlacesPage} from '../places/places';
-import {PaymentMethodPage} from '../payment-method/payment-method';
-import {FindingPage} from "../finding/finding";
-declare var google: any;
-
-/*
- Generated class for the HomePage page.
-
- See http://ionicframework.com/docs/v2/components/#navigation for more info on
- Ionic pages and navigation.
- */
+import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { NavController } from 'ionic-angular';
+import { Data } from '../../providers/data/data';
+import 'rxjs/add/operator/debounceTime';
+import { FindingPage } from '../finding/finding';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  // map id
-//splash = true;
-  //tabBarElement: any;
-
-  public mapId = Math.random() + 'map';
-
-  // map height
-  public mapHeight: number = 480;
-
-  // show - hide booking form
-  public showForm: boolean = false;
-
-  // show - hide modal bg
-  public showModalBg: boolean = false;
-
-   
-  // list vehicles 
- 
-  //* public vehicles: any = [
-    //* {
-       //*name: 'Carro',
-       //*icon: 'icon-taxi',
-       //*active: true
-     //*},
-     //*{
-       //*name: 'Bus',
-     //*  icon: 'icon-car',
-    //*   active: false
-     //*},
-    //* {
-      //* name: 'Bici',
-      //* icon: 'icon-sedan',
-     //*  active: false
-    //* }
-   //*]
-
-  // Note to driver
-  public note: any;
-
-  // Promo code
-  public promo: any;
-
-  // Map
-  public map: any;
-
-  constructor(public nav: NavController, public platform: Platform, public alertCtrl: AlertController ) {
- // this.tabBarElement = document.querySelector('.tabbar');
-}
-/*
-   ionViewDidLoad() {
-   // this.tabBarElement.style.display ='none';
-     setTimeout(() => {
-  //     this.splash = false;
-   // this.tabBarElement.style.display ='flex';
-     },4000);
-   }
-
-/*
-  ionViewDidLoad() {
-    // init map
-    this.initializeMap();
-  }
-*/
-  // toggle form
-  toggleForm() {
-    this.showForm = !this.showForm;
-    this.showModalBg = (this.showForm == true);
-  }
-
-
-
-
-  // toggle active vehicle
- // toggleVehicle(index) {
-   // for (var i = 0; i < this.vehicles.length; i++) {
-     // this.vehicles[i].active = (i == index);
-  //  }
- // }
-
-  initializeMap() {
-    let latLng = new google.maps.LatLng(4.793648500000001, -75.68910249999999);
-
-    let mapOptions = {
-      center: latLng,
-      zoom: 18,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      mapTypeControl: false,
-      zoomControl: false,
-      streetViewControl: false
+    searchTerm: string = '';
+    searchControl: FormControl;
+    items: any;
+    searching: any = false;
+     
+    constructor(public navCtrl: NavController, public dataService: Data, public nav: NavController) {
+        this.searchControl = new FormControl();
     }
+ 
+  login() {
+     this.nav.push(FindingPage);
+  }
 
-    this.map = new google.maps.Map(document.getElementById(this.mapId), mapOptions);
-
-    // get ion-view height
-    var viewHeight = window.screen.height - 44; // minus nav bar
-    // get info block height
-    var infoHeight = document.getElementsByClassName('booking-info')[0].scrollHeight;
-    // get booking form height
-    var bookingHeight = document.getElementsByClassName('booking-form')[0].scrollHeight;
-
-    // set map height = view height - info block height + booking form height
-    this.mapHeight = viewHeight - infoHeight + bookingHeight;
-
-    let options = {timeout: 120000, enableHighAccuracy: true};
-
-    // refresh map
-    setTimeout(() => {
-      google.maps.event.trigger(this.map, 'resize');
-    }, 300);
-
-    // use GPS to get center position
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        let newLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-        this.map.setCenter(newLatLng);
-        new google.maps.Marker({
-          map: this.map,
-          animation: google.maps.Animation.DROP,
-          position: this.map.getCenter()
+    ionViewDidLoad() {
+ 
+        this.setFilteredItems();
+ 
+        this.searchControl.valueChanges.debounceTime(700).subscribe(search => {
+ 
+            this.searching = false;
+            this.setFilteredItems();
+ 
         });
-      },
-      (error) => {
-        console.log(error);
-      },
-      options
-    );
-  }
-
-  // Show note popup when click to 'Notes to driver'
-  showNotePopup() {
-    let prompt = this.alertCtrl.create({
-      title: 'Notes to driver',
-      message: "",
-      inputs: [
-        {
-          name: 'note',
-          placeholder: 'Note'
-        },
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          handler: data => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Save',
-          handler: data => {
-            console.log('Saved clicked');
-          }
-        }
-      ]
-    });
-
-    prompt.present();
-  };
-
-  // Show promote code popup when click to 'Promote Code'
-  showPromoPopup() {
-    let prompt = this.alertCtrl.create({
-      title: 'Promo code',
-      message: "",
-      inputs: [
-        {
-          name: 'note',
-          placeholder: 'Promo code'
-        },
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          handler: data => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Save',
-          handler: data => {
-            console.log('Saved clicked');
-          }
-        }
-      ]
-    });
-
-    prompt.present();
-  };
-
-  // go to next view when the 'Book' button is clicked
-  book() {
-    // hide booking form
-    this.toggleForm();
-
-    // go to finding page
-    this.nav.push(FindingPage);
-  }
-
-  // choose pickup place
-  choosePlace() {
-    // go to places page
-    this.nav.push(PlacesPage);
-  }
-
-  // choose payment method
-  choosePaymentMethod() {
-    // go to payment method page
-    this.nav.push(PaymentMethodPage);
-  }
+    }
+ 
+    onSearchInput(){
+        this.searching = true;
+    }
+ 
+    setFilteredItems() {
+ 
+        this.items = this.dataService.filterItems(this.searchTerm);
+ 
+    }
+/*
+   nextLoad() {
+for(let i=this.items;i< this.items+10; i++){
+this.items.push(i);   
+ }
+    this.items +- 10;
+}
+*/
 }

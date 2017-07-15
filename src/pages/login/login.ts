@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuController, NavController,Platform, AlertController } from 'ionic-angular';
+import { MenuController, NavController,Platform, AlertController} from 'ionic-angular';
 import {RegisterPage} from '../register/register';
 import {HomePage} from '../home/home';
 declare var google: any;
@@ -15,13 +15,12 @@ declare var google: any;
   templateUrl: 'login.html'
 })
 export class LoginPage {
- 
-
+ tabBarElement: any;
   constructor(public nav: NavController, 
   public platform: Platform, 
   public alertCtrl: AlertController,  
   public menu: MenuController,
-  public navCtrl: NavController) {
+  public navCtrl: NavController) {    
   }
   
 
@@ -33,7 +32,7 @@ export class LoginPage {
   login() {
     this.nav.setRoot(HomePage);
   }
- ionViewDidEnter() {
+ Nomenu() {
     // the root left menu should be disabled on the tutorial page
     this.menu.enable(false);
   }

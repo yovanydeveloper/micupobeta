@@ -1,19 +1,13 @@
 import {Component} from '@angular/core';
-import {Platform} from 'ionic-angular';
+import { Platform, MenuController} from 'ionic-angular';
 import {ViewChild} from '@angular/core';
 import {StatusBar} from 'ionic-native';
-
 // import pages
 
 import {LoginPage} from '../pages/login/login';
-import {CorreoPage} from '../pages/correo/correo';
-import {RegisterPage} from '../pages/register/register';
-import {MovilPage} from '../pages/movil/movil';
-import {PasswordPage} from '../pages/password/password';
-import {TutoPage} from '../pages/tuto/tuto';
 import {HomePage} from '../pages/home/home';
 import {InicioPage} from '../pages/inicio/inicio';
-import {HistoryPage} from '../pages/history/history';
+import {RegistroViajePage} from '../pages/registrov/registrov';
 import {NotificationPage} from '../pages/notification/notification';
 import {SupportPage} from '../pages/support/support';
 
@@ -30,6 +24,8 @@ export class MyApp {
 
   public nav: any;
 
+  public menu: MenuController
+
   public pages = [
     {
       title: 'Inicio',
@@ -38,15 +34,15 @@ export class MyApp {
       component: HomePage
     },
     {
-      title: 'Ver Rutas Disponibles ',
+      title: 'Registrar Viaje ',
       icon: 'ios-time-outline',
       count: 0,
-      component: HistoryPage
+      component: RegistroViajePage
     },
     {
-      title: 'Tus Viajes',
+      title: 'Historial',
       icon: 'ios-notifications-outline',
-      count: 2,
+      count: 3,
       component: NotificationPage
     },
     {

@@ -36,27 +36,8 @@ ion-label{
    
 }
 
-.light-bg {
-  background-color: color($colors, light);
-   background: url("../assets/img/bg2.jpg") no-repeat center;
-}
 
-.dark-bg {
-  background-color: color($colors, dark);
-}
 
-.stable-bg {
-  background-color: #f8f8f8;
-}
-
-.light {
-  color: color($colors, light);
-}
-
-.black-transparent {
-  background: rgba(0, 0, 0, 0.8);
-  color: color($colors, white);
-}
 
 // text style
 .bold {
@@ -79,33 +60,7 @@ ion-label{
   height: 100%;
 }
 
-.list-no-border {
 
-  .item:first-child {
-    border: none;
-  }
-  .item:last-child {
-    border: none;
-  }
-
-  .item-inner {
-    border: none;
-  }
-}
-
-.list-full-border {
-  @extend .list-no-border;
-
-  .item,
-  .item:first-child,
-  .item:last-child {
-    border-bottom: 1px solid color($colors, bgColor);
-
-    .item-inner {
-      border: none;
-    }
-  }
-}
 
 
 
@@ -132,35 +87,16 @@ ion-label{
   border-radius: 10%;
   font-size: 3em;
 }
-.item{
-    background:  rgba(232,230,230,0px);
-}
+
 .auth-bg {
   background: url("../assets/img/bg2.jpg") no-repeat center;
   background-size: 100% 100%;
 
-  .scroll-content {
-    display: flex !important;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-
     .auth-content {
       min-width: 86%;
 
-      .light-bg {
-        // keep only bottom border
-        .item-input {
-          margin: 0;
-          padding-left: 0;
-          border: none;
-          border-bottom: 1px solid #DDD;
-          .item-inner {
-            border: none;
-          }
-        }
-      }
-    }
+      
+    
   }
 }
 

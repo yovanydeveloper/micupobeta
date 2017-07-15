@@ -1,8 +1,8 @@
 export let PLACES = [
   {
-    name: "Jhon henao",
+    name: "Carlos Herrera",
     address: "Dosquebradas,Barrio el Progreso",
-    distance: 1
+    distance: 0.6
   },
   {
     name: "Marcela Cardona",

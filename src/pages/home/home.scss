@@ -1,5 +1,18 @@
-page-home {
+page-home{
+ p {
+   text-align: center;  
+   margin:2%;
+ }
 
+  
+    .spinner-container {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        overflow-y: scroll;
+        overflow-x: scroll;
+    
+    }
 
 .home {
   #map {
@@ -102,4 +115,6 @@ page-home {
     }
   }
 }
+
+ 
 }

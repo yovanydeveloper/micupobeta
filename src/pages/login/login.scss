@@ -1,10 +1,18 @@
 page-login{
 
+
+.error-box {
+    color: red;
+    margin-left: 7%;
+	}
+	
+	.error-border {
+		color: red;
+  }
+
 ion-card-header {
     background: #000000;
--webkit-box-shadow: -1px 5px 34px 1px rgba(0,0,0,0.73);
--moz-box-shadow: -1px 5px 34px 1px rgba(0,0,0,0.73);
-box-shadow: -1px 5px 34px 1px rgba(0,0,0,0.73);
+
     height: 120px;
     width: 100%;
     margin-top: 0   px;

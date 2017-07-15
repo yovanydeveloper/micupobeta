@@ -5,7 +5,6 @@ import { TrackingPage } from '../tracking/tracking';
 
 /*
   Generated class for the DriverPage page.
-
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
