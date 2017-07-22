@@ -7,12 +7,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import {DriverService} from '../services/driver-service';
 import {NotificationService} from '../services/notification-service';
 import {PlaceService} from '../services/place-service';
+import { Data } from '../providers/data/data';
 // end import services
 
 
 
 // import pages
-import { Data } from '../providers/data/data';
+import { ResetpassPage } from '../pages/resetpass/resetpass';
 import { DriverPage} from '../pages/driver/driver';
 import { FindingPage} from '../pages/finding/finding';
 import { RegistroViajePage} from '../pages/registrov/registrov';
@@ -47,12 +48,13 @@ import { TrackingPage} from '../pages/tracking/tracking';
     PasswordPage,
     TutoPage,
     TrackingPage,
+    ResetpassPage,
     SupportPage
 ],
   imports: [
     BrowserModule,
     HttpModule,
-    
+
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -71,6 +73,7 @@ import { TrackingPage} from '../pages/tracking/tracking';
     PasswordPage,
     MovilPage,
     TutoPage,
+    ResetpassPage,
     TrackingPage,
     SupportPage
 ],
@@ -79,7 +82,7 @@ import { TrackingPage} from '../pages/tracking/tracking';
     NotificationService,
     PlaceService,
     Data,
-    {provide: ErrorHandler, useClass: IonicErrorHandler} 
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
     /* import services */
 ]
 })

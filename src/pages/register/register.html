@@ -1,53 +1,46 @@
-<!--
-  Generated template for the RegisterPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-
-<!--
-  Generated template for the LoginPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-
-<ion-content class="background">
-<ion-card-header>
-   <div class="cabezera">
- <h2 ion-text color="light">Registro</h2>
-   </div>
-</ion-card-header>
-</ion-content>
 <ion-content>
-<ion-fab top right>
-    <button ion-fab mini block (click)="signup()" color="favorite" ><ion-icon name="close"></ion-icon></button>
-  
-  </ion-fab>
-</ion-content>
-<ion-content>
-  <ion-list class="formulario">
-         
-        
-        <p>Hola.¿Como te llamas?</p>
-                    <ion-item>
-             <ion-icon name="person" item-start></ion-icon>
-             <ion-label floating>Nombres</ion-label>
-            <ion-input type="text"  name="Nombres"  clearInput="true" required></ion-input>
-            </ion-item>
-     
 
-            <ion-item>
-            <ion-icon name="person-add" item-start></ion-icon>
-            <ion-label floating>Apellidos</ion-label>
-            <ion-input type="text" name= "Apellidos"  clearInput="true" required ></ion-input>
-            </ion-item>
-             <div padding>
-        <button  ion-button color="favorite"  block (click)="loginup()">
-         <ion-icon name="arrow-forward" item-start></ion-icon>
-        </button>
-      </div>     
+	<div class="logo">
+		<img src="assets/icon/logo.png" alt="Ionic logo">
+		<ion-fab left>
+				<button ion-fab mini block (click)="signup()" color="primary" ><ion-icon name="close"></ion-icon></button>
+		</ion-fab>
+	</div>
 
+  <form class="formulario" [formGroup]="myForm" (ngSubmit)="submitForm(myForm.value)" novalidate>
+			<h3>Hola.¿Como te llamas?</h3>
+  <ion-list no-lines>
+        			 <ion-item>
+                 <ion-icon name="person" item-left></ion-icon>
+        				 <ion-label floating color="primary">Nombres</ion-label>
+        				 <ion-input  formControlName="name" type="text" name="nombre" value=""  spellcheck="false" autocapitalize="off">
+                 </ion-input>
+               </ion-item>
+
+                <ion-item *ngIf="myForm.get('name').errors && myForm.get('name').dirty">
+                 <p color="danger" ion-text *ngIf="myForm.get('name').hasError('required')">Debes Ingresar Almenos Un Nombre</p>
+								 <p color="danger" ion-text *ngIf="myForm.get('name').hasError('minlength')">Recuerda Ingresar Un Nombre Real</p>
+								 <p color="danger" ion-text *ngIf="myForm.get('name').hasError('maxlength')">Tu Nombre Es Demasiado largo</p>
+								</ion-item>
+
+        			<ion-item>
+                <ion-icon name="person-add" item-left></ion-icon>
+        				<ion-label floating color="primary">Apellidos</ion-label>
+        				<ion-input formControlName="lastname"  type="text" name="apellido" value="" spellcheck="false" autocapitalize="off">
+        				</ion-input>
+        			</ion-item>
+
+              <ion-item *ngIf="myForm.get('lastname').errors && myForm.get('lastname').dirty">
+        			   <p color="danger" ion-text *ngIf="myForm.get('lastname').hasError('required')">Debes Ingresar Tus Apellidos</p>
+								 <p color="danger" ion-text *ngIf="myForm.get('lastname').hasError('minlength')">Recuerda Ingresar Tus Apellidos</p>
+								 <p color="danger" ion-text *ngIf="myForm.get('lastname').hasError('maxlength')">Recerda Ingresar Solo tus Apellidos</p>
+			        </ion-item>
+
+             <br><ion-fab right>
+                    <button  ion-fab  block full color="favorite" type="submit" [disabled]="myForm.invalid" block (click)="login()">
+                    <ion-icon name="arrow-forward" item-start></ion-icon>
+                    </button>
+            </ion-fab>
   </ion-list>
-</ion-content>
-
+  </form>
+  </ion-content>

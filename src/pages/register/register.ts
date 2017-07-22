@@ -1,35 +1,38 @@
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Component } from '@angular/core';
-import {  MenuController, NavController } from 'ionic-angular';
+import { IonicPage, MenuController, NavController,Platform, AlertController} from 'ionic-angular';
+import {MovilPage} from '../movil/movil';
 import {LoginPage} from '../login/login';
-import {CorreoPage} from "../correo/correo";
 
-/*
- Generated class for the RegisterPage page.
-
- See http://ionicframework.com/docs/v2/components/#navigation for more info on
- Ionic pages and navigation.
- */
+@IonicPage()
 @Component({
   selector: 'page-register',
   templateUrl: 'register.html'
 })
 export class RegisterPage {
-  constructor(public nav:NavController,public menu: MenuController) {
-  }
 
+  myForm:FormGroup;
+
+  constructor(
+  public navCtrl: NavController,
+  public platform: Platform,
+  public alertCtrl: AlertController,
+  public menu: MenuController,
+  public fb:FormBuilder
+) {
+   this.myForm = this.fb.group({
+     name: ['', [Validators.required,  Validators.minLength(3), Validators.maxLength(30)]],
+     lastname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30) ]],
+   });
+ }
   signup() {
-    this.nav.setRoot(LoginPage);
+    this.navCtrl.push(LoginPage);
   }
-
-  loginup() {
-    this.nav.setRoot(CorreoPage);
+  login() {
+    this.navCtrl.setRoot(MovilPage);
   }
-  ionViewDidEnter() {
-    // esconder menu lateral
-    this.menu.enable(false);
-  }
-    ionViewDidLeave() {
-    // enable the root left menu when leaving the tutorial page
-    this.menu.enable(true);
+  submitForm(value: any):void{
+    console.log('Form submited!')
+    console.log(value);
   }
 }

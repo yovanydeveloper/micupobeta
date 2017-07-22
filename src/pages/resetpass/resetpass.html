@@ -1,0 +1,33 @@
+<!--
+  Generated template for the ResetpassPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>ResetPassword</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form class="formulario" [formGroup]="myForm" (ngSubmit)="submitForm(myForm.value)" novalidate>
+    <ion-icon name="contact"></ion-icon>
+    <ion-list>
+      <ion-item>
+        <ion-icon name="person" item-left></ion-icon>
+        <ion-label floating color="primary">Correo Institucional</ion-label>
+        <ion-input  formControlName="email" name="correo" value="" type="email" spellcheck="false" autocapitalize="off">
+        </ion-input>
+      </ion-item>
+
+       <ion-item *ngIf="myForm.get('email').errors && myForm.get('email').dirty">
+        <p color="danger" ion-text *ngIf="myForm.get('email').hasError('required')">Recuerda Ingresar Tu Correo Univesitario</p>
+       </ion-item>
+
+    </ion-list>
+    <div padding>
+        <button class="entrar" ion-button full color="primary" type="submit" [disabled]="myForm.invalid">Cambiar Contraseña</button>
+    </div>
+  </form>
+</ion-content>

@@ -1,35 +1,38 @@
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Component } from '@angular/core';
-import {MenuController, NavController } from 'ionic-angular';
+import { IonicPage, MenuController, NavController,Platform, AlertController} from 'ionic-angular';
 import {RegisterPage} from '../register/register';
-import {MovilPage} from '../movil/movil';
-/*
-  Generated class for the LoginPage page.
+import { LoginPage} from '../login/login';
+import {PasswordPage} from '../password/password';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+@IonicPage()
 @Component({
   selector: 'page-correo',
   templateUrl: 'correo.html'
 })
 export class CorreoPage {
-  constructor(public nav: NavController, public menu: MenuController,) {}
 
-  signup() {
-    this.nav.setRoot(RegisterPage);
-  }
+    myForm:FormGroup;
 
-  login() {
-    this.nav.setRoot(MovilPage);
-  }
-    ionViewDidEnter() {
-    // the root left menu should be disabled on the tutorial page
-    this.menu.enable(false);
-  }
-
-  ionViewDidLeave() {
-    // enable the root left menu when leaving the tutorial page
-    this.menu.enable(true);
-  } 
+    constructor(
+    public navCtrl: NavController,
+    public platform: Platform,
+    public alertCtrl: AlertController,
+    public menu: MenuController,
+    public fb:FormBuilder
+  ) {
+     this.myForm = this.fb.group({
+       email: ['', [Validators.required ]],
+     });
+   }
+    signup() {
+      this.navCtrl.push(PasswordPage);
+    }
+    login() {
+      this.navCtrl.setRoot(LoginPage);
+    }
+    submitForm(value: any):void{
+      console.log('Form submited!')
+      console.log(value);
+    }
 }
-

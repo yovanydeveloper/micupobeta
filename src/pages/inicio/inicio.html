@@ -5,20 +5,28 @@
   Ionic pages and navigation.
 -->
 <div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
-<div class="flb">
-  <div class="Aligner-item Aligner-item--top"></div>
-  <img src="assets/logo.svg">
-  <div class="Aligner-item Aligner-item--bottom"></div>
+      <div class="flb">
+        <div class="Aligner-item Aligner-item--top"></div>
+        <img src="assets/logo.svg">
+        <div class="Aligner-item Aligner-item--bottom"></div>
+      </div>
 </div>
 
-</div>
-<ion-content padding class="fondo">
-
+<ion-content class="fondo">
+  <div class="cabezera">
+    <img src="assets/icon/logo.png">
+  </div>
+<ion-footer>
 <ion-grid>
-<button class="login" ion-button small round outline color="favorite" block (click)="login()">Iniciar Sesión</button>
-<button class="registro" ion-button small round outline color="danger" block (click)="signup()">Registrarme</button>
+        <ion-row justify-content-center>
 
- </ion-grid>
+  <button class="login" ion-button round icon left block (click)="login()">Iniciar Sesión</button>
+  <button class="registro" ion-button round outline color="favorite" icon left block (click)="signup()">Registrarme</button>
+
+
+       </ion-row>
+</ion-grid>
+</ion-footer>
 
 
 </ion-content>
