@@ -19,18 +19,13 @@ export class PasswordPage {
     public platform: Platform,
     public alertCtrl: AlertController,
     public menu: MenuController,
-    public formBuilder:FormBuilder
+    public fb:FormBuilder
   ) {
-     this.myForm = this.createMyForm();
+     this.myForm = this.fb.group({
+        password: ['', [Validators.required, Validators.minLength(6)]],
+        passwordConfirmation: ['', [Validators.required, Validators.minLength(6)]],
+     });
    }
-   private createMyForm(){
-return this.formBuilder.group({
- passwordRetry: this.formBuilder.group({
-   password: ['', [Validators.required]],
-   passwordConfirmation:  ['', [Validators.required]],
- }),
-});
-}
     signup() {
       this.navCtrl.push(MovilPage);
     }

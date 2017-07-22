@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { IonicPage, MenuController, NavController,Platform, AlertController} from 'ionic-angular';
 import {RegisterPage} from '../register/register';
 import {HomePage} from '../home/home';
-import {ResetpassPage} from '../resetpass/resetpass';
+import {ResetpssPage} from '../resetpss/resetpss';
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -21,7 +21,7 @@ export class LoginPage {
   public fb:FormBuilder
 ) {
    this.myForm = this.fb.group({
-     email: ['', [Validators.required ]],
+     email: ['', [Validators.required, Validators.email ]],
      password: ['', [Validators.required ]],
    });
  }
@@ -36,6 +36,6 @@ export class LoginPage {
     console.log(value);
   }
   goToResetPassword(){
-  this.navCtrl.push('ResetpassPage');
+  this.navCtrl.push(ResetpssPage);
 }
 }

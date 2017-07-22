@@ -9,11 +9,8 @@ import {NotificationService} from '../services/notification-service';
 import {PlaceService} from '../services/place-service';
 import { Data } from '../providers/data/data';
 // end import services
-
-
-
 // import pages
-import { ResetpassPage } from '../pages/resetpass/resetpass';
+import { ResetpssPage } from '../pages/resetpss/resetpss';
 import { DriverPage} from '../pages/driver/driver';
 import { FindingPage} from '../pages/finding/finding';
 import { RegistroViajePage} from '../pages/registrov/registrov';
@@ -34,6 +31,7 @@ import { TrackingPage} from '../pages/tracking/tracking';
 @NgModule({
   declarations: [
     MyApp,
+    ResetpssPage,
     DriverPage,
     FindingPage,
     RegistroViajePage,
@@ -48,18 +46,17 @@ import { TrackingPage} from '../pages/tracking/tracking';
     PasswordPage,
     TutoPage,
     TrackingPage,
-    ResetpassPage,
     SupportPage
 ],
   imports: [
     BrowserModule,
     HttpModule,
-
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    ResetpssPage,
     DriverPage,
     FindingPage,
     RegistroViajePage,
@@ -73,7 +70,6 @@ import { TrackingPage} from '../pages/tracking/tracking';
     PasswordPage,
     MovilPage,
     TutoPage,
-    ResetpassPage,
     TrackingPage,
     SupportPage
 ],

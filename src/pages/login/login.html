@@ -18,6 +18,7 @@
 
               <ion-item *ngIf="myForm.get('email').errors && myForm.get('email').dirty">
                <p color="danger" ion-text *ngIf="myForm.get('email').hasError('required')">Ingresa Tu Correo Universitario</p>
+							 <p color="danger" ion-text *ngIf="myForm.get('email').hasError('email')">Por favor, ingresa Un Correo Valido</p>
               </ion-item>
 
       			<ion-item>

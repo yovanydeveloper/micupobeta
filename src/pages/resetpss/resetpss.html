@@ -1,0 +1,43 @@
+<ion-content>
+<div class="logo">
+	<img src="assets/icon/logo.png" alt="Ionic logo">
+	<ion-fab left>
+			<button ion-fab mini block (click)="signup()" color="primary" ><ion-icon name="close"></ion-icon></button>
+	</ion-fab>
+</div>
+
+<form class="formulario" [formGroup]="myForm" (ngSubmit)="submitForm(myForm.value)" novalidate>
+
+		<ion-list no-lines>
+      <br><br><ion-item>
+        <ion-icon name="person" item-left></ion-icon>
+        <ion-label floating color="primary">Correo Institucional</ion-label>
+        <ion-input  formControlName="email" name="correo" value="" type="email" spellcheck="false" autocapitalize="off">
+        </ion-input>
+      </ion-item>
+
+       <ion-item *ngIf="myForm.get('email').errors && myForm.get('email').dirty">
+        <p color="danger" ion-text *ngIf="myForm.get('email').hasError('required')">Recuerda Ingresar Tu Correo Univesitario</p>
+        <p color="danger" ion-text *ngIf="myForm.get('email').hasError('email')">Ingresa Un Correo Valido</p>
+			 </ion-item>
+
+			 <ion-item>
+			 	<ion-icon name="key" item-left></ion-icon>
+			 	<ion-label floating color="primary">Nueva Contraseña</ion-label>
+			 	<ion-input formControlName="password"  type="password" name="password" value="" spellcheck="false" autocapitalize="off">
+			 	</ion-input>
+			 </ion-item>
+
+			 <ion-item *ngIf="myForm.get('password').errors && myForm.get('password').dirty">
+			 	 <p color="danger" ion-text *ngIf="myForm.get('password').hasError('required')">Ingresa una Contraseña</p>
+				 <p color="danger" ion-text *ngIf="myForm.get('password').hasError('minlength')">Contraseña muy debil</p>
+			 </ion-item>
+
+		<ion-grid>
+				<ion-row justify-content-center >
+        <button class="entrar" ion-button full color="primary" type="submit" [disabled]="myForm.invalid" block (click)="login()">Cambiar Contraseña</button>
+			</ion-row>
+	</ion-grid>
+  </ion-list>
+</form>
+</ion-content>
