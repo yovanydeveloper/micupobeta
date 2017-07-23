@@ -15,32 +15,33 @@
 
 <ion-fab top right>
     <button ion-fab  block (click)="signup()" color="favorite" ><ion-icon name="person-add"></ion-icon></button>
-  
+
   </ion-fab>
 </ion-content>
 
 <ion-content>
   <ion-list class="formulario">
-         
-        
+
+
              <h2 ion-text color="dark">Iniciar Sesión</h2>
             <ion-item>
             <ion-icon name="mail" item-start></ion-icon>
             <ion-label floating >Correo Institucional</ion-label>
-            <ion-input type="email" name="Correo" clearInput="true"  required></ion-input>
+            <ion-input type="email" [(ngModel)]="correo" name="Correo" clearInput="true"  required></ion-input>
             </ion-item>
-     
+
 
             <ion-item>
             <ion-icon name="lock" item-start></ion-icon>
              <ion-label floating>Contraseña</ion-label>
-            <ion-input type="password" name= "Pass" clearInput="true" required ></ion-input>
+            <ion-input type="password" [(ngModel)]="pass" name= "Pass" clearInput="true" required ></ion-input>
             </ion-item>
              <div padding>
-        <button  ion-button color="primary"  block (click)="login()">
+
+        <button ion-button [disabled]=" correo.length < 5 || pass.length < 5  " color="primary"  block (click)="ingresar()">
           ENTRAR
         </button>
-      </div>     
+      </div>
         <p>¿Olvidaste tu Contraseña?</p>
   </ion-list>
 </ion-content>

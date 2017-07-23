@@ -9,7 +9,8 @@ import {NotificationService} from '../services/notification-service';
 import {PlaceService} from '../services/place-service';
 // end import services
 
-
+//storage
+import { IonicStorageModule } from '@ionic/storage';
 
 // import pages
 import { Data } from '../providers/data/data';
@@ -52,7 +53,7 @@ import { TrackingPage} from '../pages/tracking/tracking';
   imports: [
     BrowserModule,
     HttpModule,
-    
+    IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -79,7 +80,7 @@ import { TrackingPage} from '../pages/tracking/tracking';
     NotificationService,
     PlaceService,
     Data,
-    {provide: ErrorHandler, useClass: IonicErrorHandler} 
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
     /* import services */
 ]
 })

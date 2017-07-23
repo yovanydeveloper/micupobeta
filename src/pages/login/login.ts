@@ -4,6 +4,8 @@ import {RegisterPage} from '../register/register';
 import {HomePage} from '../home/home';
 declare var google: any;
 
+import { UsuarioService } from "../../providers/usuario";
+
 /*
   Generated class for the LoginPage page.
 
@@ -15,15 +17,29 @@ declare var google: any;
   templateUrl: 'login.html'
 })
 export class LoginPage {
- tabBarElement: any;
-  constructor(public nav: NavController, 
-  public platform: Platform, 
-  public alertCtrl: AlertController,  
-  public menu: MenuController,
-  public navCtrl: NavController) {    
-  }
-  
 
+  correo:string = "";
+  pass:string = "";
+
+ tabBarElement: any;
+  constructor(public nav: NavController,
+  public platform: Platform,
+  public alertCtrl: AlertController,
+  public menu: MenuController,
+  public navCtrl: NavController,
+  private _us: UsuarioService) {
+  }
+
+  ingresar(){
+
+    this._us.ingresar( this.correo, this.pass)
+            .subscribe( ()=> {
+
+
+
+            } )
+
+  }
 
   signup() {
     this.nav.setRoot(RegisterPage);
@@ -40,5 +56,5 @@ export class LoginPage {
   ionViewDidLeave() {
     // enable the root left menu when leaving the tutorial page
     this.menu.enable(true);
-  }  
+  }
 }

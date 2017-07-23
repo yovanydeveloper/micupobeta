@@ -11,11 +11,11 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class Data {
- 
+
     items: any;
- 
+
     constructor(public http: Http) {
- 
+
         this.items = [
             {title: 'La Badea - Dosquebradas'},
             {title: 'Bosques de la Acuarela - Dosquebradas'},
@@ -68,16 +68,16 @@ export class Data {
             {title: 'Gama 3 - Pereira'},
             {title: 'Boston- Pereira'},
         ]
-        
- 
+
+
     }
- 
+
     filterItems(searchTerm){
- 
+
         return this.items.filter((item) => {
             return item.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
-        });     
- 
+        });
+
     }
- 
+
 }
