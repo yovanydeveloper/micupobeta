@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MenuController, IonicPage, NavController, NavParams } from 'ionic-angular';
-import {RegisterPage} from '../register/register';
+import {Registro1Page} from '../registro1/registro1';
 import {LoginPage} from '../login/login';
 /**
  * Generated class for the InicioPage page.
@@ -30,7 +30,7 @@ ionViewDidLoad() {
    }
 
   signup() {
-    this.nav.setRoot(RegisterPage);
+    this.nav.setRoot(Registro1Page);
   }
 
   login() {

@@ -1,7 +1,7 @@
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Component } from '@angular/core';
 import { IonicPage, MenuController, NavController,Platform, AlertController} from 'ionic-angular';
-import {RegisterPage} from '../register/register';
+import {Registro1Page} from '../registro1/registro1';
 import {HomePage} from '../home/home';
 import {ResetpssPage} from '../resetpss/resetpss';
 @IonicPage()
@@ -26,7 +26,7 @@ export class LoginPage {
    });
  }
   signup() {
-    this.navCtrl.push(RegisterPage);
+    this.navCtrl.push(Registro1Page);
   }
   login() {
     this.navCtrl.setRoot(HomePage);
@@ -38,4 +38,14 @@ export class LoginPage {
   goToResetPassword(){
   this.navCtrl.push(ResetpssPage);
 }
+
+ ionViewDidEnter() {
+    // the root left menu should be disabled on the tutorial page
+    this.menu.enable(false);
+  }
+
+  ionViewDidLeave() {
+    // enable the root left menu when leaving the tutorial page
+    this.menu.enable(true);
+  }  
 }

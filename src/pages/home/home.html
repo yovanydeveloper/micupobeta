@@ -1,8 +1,6 @@
-
-
 <!--  cabezote -->
 <ion-header>
-  <ion-navbar color="primary" >
+  <ion-navbar color="fondo" >
     <button  ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -10,29 +8,10 @@
   </ion-navbar>
 </ion-header>
  <!--Buscador -->
-   <ion-content padding>
-     <p>Ingresa tu Destino</p>
-
-    <ion-searchbar [(ngModel)]="searchTerm" [formControl]="searchControl" (ionInput)="onSearchInput()"></ion-searchbar>
- 
-    <div *ngIf="searching" class="spinner-container" >
-        <ion-spinner></ion-spinner>
-    </div>
-
-<ion-card>
-  <ion-card-header>
-    <p>Rutas Disponibles</p>
-  </ion-card-header>
-
-  <ion-list>
-    <button ion-item *ngFor="let item of items" block (click)="login()">
-      <ion-icon name="car" item-start></ion-icon>
-     {{item.title}}
-    </button>
-  </ion-list>
-  </ion-card>
+<ion-content padding>
 
 </ion-content>
-<!--
 
-  -->
+
+
+

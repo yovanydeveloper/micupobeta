@@ -1,0 +1,42 @@
+<ion-content>
+
+<div class="logo">
+<div class="">
+		<ion-fab left>
+				<button ion-fab mini block (click)="signup()" color="fondo" ><ion-icon name="arrow-back"></ion-icon></button>
+     </ion-fab>
+        <h3>REGISTRO</h3>
+     </div>
+  </div>
+  <form class="formulario" [formGroup]="myForm" (ngSubmit)="submitForm(myForm.value)" novalidate>
+    <p>Información de la cuenta</p>
+ <ion-list no-lines>
+        			 <ion-item>
+                 <ion-icon name="phone-portrait" item-left></ion-icon>
+        				 <ion-label floating color="primary">Número de Teléfono </ion-label>
+        				 <ion-input  formControlName="cel" type="number" name="movil" value=""  spellcheck="false" autocapitalize="off">
+                 </ion-input>
+               </ion-item>
+
+                <ion-item *ngIf="myForm.get('cel').errors && myForm.get('cel').dirty">
+                 <p color="danger" ion-text *ngIf="myForm.get('cel').hasError('required')">Ingresa Tu Número Celular</p>
+                 <p color="danger" ion-text *ngIf="myForm.get('cel').hasError('minlength')">Número Invalido</p>
+                </ion-item>
+                
+                <ion-item>
+          <ion-icon name="eye" item-left></ion-icon>
+          <ion-label floating>Contraseña:</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+
+      <ion-item *ngIf="myForm.get('password').errors && myForm.get('password').dirty">
+			<p color="danger" ion-text *ngIf="myForm.get('password').hasError('required')">Ingresa una contraseña</p>
+      <p color="danger" ion-text *ngIf="myForm.get('password').hasError('minlength')">Contraseña muy Debil</p>
+    </ion-item>
+    <br> 
+     <ion-row justify-content-center >
+    <button class="entrar" ion-button  color="fondo" type="submit" [disabled]="myForm.invalid" block (click)="login()">SIGUIENTE</button>  
+    </ion-row>  
+</ion-list>
+</form>
+</ion-content>

@@ -1,10 +1,12 @@
 <ion-content>
-<div class="logo">
-	<img src="assets/icon/logo.png" alt="Ionic logo">
-	<ion-fab left>
-			<button ion-fab mini block (click)="signup()" color="primary" ><ion-icon name="close"></ion-icon></button>
-	</ion-fab>
-</div>
+      <div class="logo">
+          <div class="">
+                <ion-fab left>
+                  <button ion-fab mini block (click)="signup()" color="fondo" ><ion-icon name="close"></ion-icon></button>
+                </ion-fab>
+                <h3>Cambio de Contraseña</h3>
+          </div>
+      </div>
 
 <form class="formulario" [formGroup]="myForm" (ngSubmit)="submitForm(myForm.value)" novalidate>
 
@@ -33,11 +35,10 @@
 				 <p color="danger" ion-text *ngIf="myForm.get('password').hasError('minlength')">Contraseña muy debil</p>
 			 </ion-item>
 
-		<ion-grid>
-				<ion-row justify-content-center >
-        <button class="entrar" ion-button full color="primary" type="submit" [disabled]="myForm.invalid" block (click)="login()">Cambiar Contraseña</button>
-			</ion-row>
-	</ion-grid>
+    <br> 
+     <ion-row justify-content-center >
+    <button class="entrar" ion-button  color="fondo" type="submit" [disabled]="myForm.invalid" block (click)="login()">CAMBIAR</button>  
+    </ion-row>  
   </ion-list>
 </form>
 </ion-content>

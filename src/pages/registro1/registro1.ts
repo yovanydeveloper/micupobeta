@@ -1,15 +1,15 @@
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Component } from '@angular/core';
 import { IonicPage, MenuController, NavController,Platform, AlertController} from 'ionic-angular';
-import {MovilPage} from '../movil/movil';
+import {Registro2Page} from '../registro2/registro2';
 import {LoginPage} from '../login/login';
 
 @IonicPage()
 @Component({
-  selector: 'page-register',
-  templateUrl: 'register.html'
+  selector: 'page-registro1',
+  templateUrl: 'registro1.html'
 })
-export class RegisterPage {
+export class Registro1Page {
 
   myForm:FormGroup;
 
@@ -29,7 +29,7 @@ export class RegisterPage {
     this.navCtrl.push(LoginPage);
   }
   login() {
-    this.navCtrl.setRoot(MovilPage);
+    this.navCtrl.setRoot(Registro2Page);
   }
   submitForm(value: any):void{
     console.log('Form submited!')

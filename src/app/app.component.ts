@@ -7,9 +7,7 @@ import {StatusBar} from 'ionic-native';
 import {LoginPage} from '../pages/login/login';
 import {HomePage} from '../pages/home/home';
 import {InicioPage} from '../pages/inicio/inicio';
-import {RegistroViajePage} from '../pages/registrov/registrov';
 import {NotificationPage} from '../pages/notification/notification';
-import {SupportPage} from '../pages/support/support';
 
 
 @Component({
@@ -34,22 +32,10 @@ export class MyApp {
       component: HomePage
     },
     {
-      title: 'Registrar Viaje ',
-      icon: 'ios-time-outline',
-      count: 0,
-      component: RegistroViajePage
-    },
-    {
-      title: 'Historial',
+      title: 'Mis viajes',
       icon: 'ios-notifications-outline',
       count: 3,
       component: NotificationPage
-    },
-    {
-      title: 'Sugerencias',
-      icon: 'ios-help-circle-outline',
-      count: 0,
-      component: SupportPage
     },
     {
       title: 'Cerrar Sesion',

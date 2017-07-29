@@ -1,14 +1,14 @@
 <ion-content>
-
-	<div class="logo">
-		<img src="assets/icon/logo.png" alt="Ionic logo">
+<div class="logo">
+<div class="">
 		<ion-fab left>
-				<button ion-fab mini block (click)="signup()" color="primary" ><ion-icon name="close"></ion-icon></button>
-		</ion-fab>
-	</div>
-
+				<button ion-fab mini block (click)="signup()" color="fondo" ><ion-icon name="arrow-back"></ion-icon></button>
+     </ion-fab>
+        <h3>REGISTRO</h3>
+     </div>
+  </div>
   <form class="formulario" [formGroup]="myForm" (ngSubmit)="submitForm(myForm.value)" novalidate>
-			<h3>Hola.¿Como te llamas?</h3>
+		<p>Empecemos por tu<br> información basica</p>
   <ion-list no-lines>
         			 <ion-item>
                  <ion-icon name="person" item-left></ion-icon>
@@ -16,31 +16,25 @@
         				 <ion-input  formControlName="name" type="text" name="nombre" value=""  spellcheck="false" autocapitalize="off">
                  </ion-input>
                </ion-item>
-
                 <ion-item *ngIf="myForm.get('name').errors && myForm.get('name').dirty">
                  <p color="danger" ion-text *ngIf="myForm.get('name').hasError('required')">Debes Ingresar Almenos Un Nombre</p>
 								 <p color="danger" ion-text *ngIf="myForm.get('name').hasError('minlength')">Recuerda Ingresar Un Nombre Real</p>
 								 <p color="danger" ion-text *ngIf="myForm.get('name').hasError('maxlength')">Tu Nombre Es Demasiado largo</p>
 								</ion-item>
-
         			<ion-item>
                 <ion-icon name="person-add" item-left></ion-icon>
         				<ion-label floating color="primary">Apellidos</ion-label>
         				<ion-input formControlName="lastname"  type="text" name="apellido" value="" spellcheck="false" autocapitalize="off">
         				</ion-input>
         			</ion-item>
-
               <ion-item *ngIf="myForm.get('lastname').errors && myForm.get('lastname').dirty">
         			   <p color="danger" ion-text *ngIf="myForm.get('lastname').hasError('required')">Debes Ingresar Tus Apellidos</p>
 								 <p color="danger" ion-text *ngIf="myForm.get('lastname').hasError('minlength')">Recuerda Ingresar Tus Apellidos</p>
 								 <p color="danger" ion-text *ngIf="myForm.get('lastname').hasError('maxlength')">Recerda Ingresar Solo tus Apellidos</p>
 			        </ion-item>
-
-             <br><ion-fab right>
-                    <button  ion-fab  block full color="favorite" type="submit" [disabled]="myForm.invalid" block (click)="login()">
-                    <ion-icon name="arrow-forward" item-start></ion-icon>
-                    </button>
-            </ion-fab>
+             <br> <ion-row justify-content-center >
+                 <button class="entrar" ion-button  color="fondo" type="submit" [disabled]="myForm.invalid" block (click)="login()">SIGUIENTE</button>  
+          </ion-row>
   </ion-list>
   </form>
   </ion-content>

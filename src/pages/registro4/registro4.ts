@@ -2,14 +2,14 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Component } from '@angular/core';
 import { IonicPage, MenuController,NavParams, NavController,Platform, AlertController} from 'ionic-angular';
 import { LoginPage} from '../login/login';
-import {PasswordPage} from '../password/password';
+import {Registro3Page} from '../registro3/registro3';
 
 @IonicPage()
 @Component({
-  selector: 'page-correo',
-  templateUrl: 'correo.html'
+  selector: 'page-registro4',
+  templateUrl: 'registro4.html'
 })
-export class CorreoPage {
+export class Registro4Page {
 
     myForm:FormGroup;
 
@@ -26,20 +26,13 @@ export class CorreoPage {
      });
    }
     signup() {
-      this.navCtrl.push(PasswordPage);
+      this.navCtrl.push(Registro3Page);
     }
     login() {
       let prompt = this.alertCtrl.create({
         title: 'Genial!',
-        subTitle: 'Para completar tu registro, has clic en el enlace, que acabamos de enviarte a tu correo institucional. Es necesario verificar que haces parte de la comunidad universitaria',
+        subTitle: 'Ahora eres parte de Mi cupo, ahora disfruta de los beneficios del uso del carro compartido en tu universidad',
         buttons: [
-          {
-            text: 'Editar',
-            handler: data => {
-              console.log('Saved clicked');
-              this.navCtrl.setRoot(CorreoPage);
-            }
-          },
           {
             text: 'Aceptar',
             handler: data => {

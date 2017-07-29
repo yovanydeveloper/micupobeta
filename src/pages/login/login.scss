@@ -1,9 +1,42 @@
 page-login{
 
-
+ion-content[scroll="false"] {
+  scroll-content {
+    overflow-y: hidden!important;
+  }
+}
+.fondo{
+  background-color:#13647A;
+  background-size: 100% 100%; 
+} 
+ ion-label{ color: #ffffff;
+ :active{
+   color: #ffffff;
+ }
+  }
+.lab{
+  color:#ffffff;
+}
+.cabezera{
+ text-align: center;
+ margin-bottom: 10%;
+img{
+  width: 70%;
+ margin-left: 10%;
+ margin-right:10%;
+  margin-top: 20%;
+  display: fixed;
+  justify-content: center;
+}
+}
 .formulario{
+ion-list{
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-top: 20%;
+}  
 ion-icon{
-      font-size: 1em;
+      font-size: 2em;
       margin-top: auto;
       margin-bottom: auto;
   }
@@ -12,8 +45,17 @@ ion-icon{
 
 p{
   text-align: center;
+color: #ffffff;
+margin-top: 2%;
+margin-bottom:2%;
 }
-
+a{
+  text-align: center;
+  font-size: 1rem;
+color: #ffffff;
+margin-top: 2%;
+margin-bottom:2%;
+}
 .error-box {
     color: red;
     margin-left: 7%;
@@ -41,10 +83,23 @@ p{
 ion-navbar{
   text-align: center;
 }
+.olvidar{
+  font-size: 1.3rem; 
+   text-transform: none;
+}
+.cuenta{
+  font-size: 1.2rem;
+  margin-bottom: 20%;
+  text-transform: none;
+}
+.border{
+color: #ffffff;
+border-block-start: #ffffff;
+ 
 
+}
 .entrar {
-  width: 60%;
- color: #009dd6;
+  width: 90%;
 }
   .list {
     margin-bottom: 0;

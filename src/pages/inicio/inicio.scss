@@ -12,7 +12,7 @@ page-inicio {
   background-color: #002a3e;
 }
 .flb{
-  background-color: #000000;
+  background-color: #ffffff;
   height: 100%;
   width: 100%;
   animation: pulse 1s linear forwards;
@@ -155,30 +155,26 @@ page-inicio {
 }
 
 .fondo {
-  background-color: #000000 ;
-
+  background: url("../assets/img/fondo_bienvenida.png") no-repeat center;
+  background-size: 100% 100%;
 }
 ion-footer{
   margin-bottom: 10%;
 }
-.login{
-  width: 60%;
-  background-color: #ffffff;
-  color: #000000;
-}
-.registro {
-  width: 60%;
- color: #009dd6;
-}
-.cabezera{
-text-align: center;
-img{
-  width: 60%;
-  margin-top: 40%;
 
+.cabezera{
+ text-align: center;
+img{
+  width: 70%;
+ margin-left: 10%;
+ margin-right:10%;
+  margin-top: 20%;
   display: fixed;
-justify-content:center;
+  justify-content: center;
 }
+}
+button{
+  width: 40%;
 }
 }
 /*.registro {
