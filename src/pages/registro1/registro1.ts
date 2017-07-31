@@ -2,7 +2,7 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Component } from '@angular/core';
 import { IonicPage, MenuController, NavController,Platform, AlertController} from 'ionic-angular';
 import {Registro2Page} from '../registro2/registro2';
-import {LoginPage} from '../login/login';
+import {InicioPage} from '../inicio/inicio';
 
 @IonicPage()
 @Component({
@@ -26,7 +26,7 @@ export class Registro1Page {
    });
  }
   signup() {
-    this.navCtrl.push(LoginPage);
+    this.navCtrl.push(InicioPage);
   }
   login() {
     this.navCtrl.setRoot(Registro2Page);
@@ -35,4 +35,20 @@ export class Registro1Page {
     console.log('Form submited!')
     console.log(value);
   }
+
+
+ ionViewDidEnter() {
+    // the root left menu should be disabled on the tutorial page
+    this.menu.enable(false);
+  }
+
+  ionViewDidLeave() {
+    // enable the root left menu when leaving the tutorial page
+    this.menu.enable(true);
+  }  
+  ionViewCanEnter() {
+   
+    this.menu.enable(false);
+  } 
+
 }

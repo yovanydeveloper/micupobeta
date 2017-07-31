@@ -7,12 +7,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 //plugins
 //import { Geolocation } from '@ionic-native/geolocation';
+import { Camera } from '@ionic-native/camera';
+import { ImagePicker } from '@ionic-native/image-picker';
+//import { Geolocation } from '@ionic-native/geolocation';
+
+//mapas
+import { AgmCoreModule } from '@agm/core';
 
 // import services
 import {DriverService} from '../services/driver-service';
 import {NotificationService} from '../services/notification-service';
 import {PlaceService} from '../services/place-service';
-import { Data } from '../providers/data/data';
 // end import services
 // import pages
 import { ResetpssPage } from '../pages/resetpss/resetpss';
@@ -56,7 +61,10 @@ import { TrackingPage} from '../pages/tracking/tracking';
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBlxIzmS_nFcItsaWRec_L94Fss0mYiKiU'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -82,7 +90,9 @@ import { TrackingPage} from '../pages/tracking/tracking';
     DriverService,
     NotificationService,
     PlaceService,
-    Data,
+    ImagePicker,
+    Camera,
+  //  Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
     /* import services */
 ]

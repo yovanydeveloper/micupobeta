@@ -18,9 +18,9 @@
         <ion-icon name="school" item-left></ion-icon>
 					<ion-label>Universidad</ion-label>
 				<ion-select formControlName="uni">
-					<ion-option value="u1">UTP</ion-option>
-					<ion-option value="u2">Universidad Catolica</ion-option>
-          <ion-option value="u3">Universidad Libre</ion-option>
+					<ion-option value="utp">UTP</ion-option>
+					<ion-option value="universidad catolica">Universidad Catolica</ion-option>
+          <ion-option value="universidad libre">Universidad Libre</ion-option>
 				</ion-select>
 			</ion-item>
     </ion-list>	
@@ -30,9 +30,9 @@
         <ion-icon name="people" item-left></ion-icon>
 					<ion-label>Cargo</ion-label>
 				<ion-select formControlName="cargo">
-					<ion-option value="u1">Estudiante</ion-option>
-					<ion-option value="u2">Docente</ion-option>
-          <ion-option value="u3">Administrativo</ion-option>
+					<ion-option value="estudiante">Estudiante</ion-option>
+					<ion-option value="docente">Docente</ion-option>
+          <ion-option value="administrativo">Administrativo</ion-option>
 				</ion-select>
 			</ion-item>
     </ion-list>
@@ -49,11 +49,19 @@
               <p color="danger" ion-text *ngIf="myForm.get('email').hasError('email')">Ingresa Un Correo Valido</p>
                </ion-item> 
             
+    <ion-list>
+      <ion-item *ngIf="imgPreview">
+            <img [src]="imgPreview">
+      </ion-item>
+    </ion-list>
+   
+    
     <br> <ion-row justify-content-center >
-    <button class="entrar" ion-button full icon-left color="danger" type="submit" [disabled]="myForm.invalid" block (click)="login()">
-      <ion-icon class="icono" large name="camera" item-left></ion-icon>
+    <button class="entrar" ion-button block icon-left (click)="camara()"  color="danger" [disabled]="myForm.invalid">
+      <ion-icon class="icono" name="camera"></ion-icon>
       FOTO DEL CARNÉT
     </button>  <br>
+    
     <button class="entrar" ion-button  color="fondo" type="submit" [disabled]="myForm.invalid" block (click)="login()">SIGUIENTE</button>  
   </ion-row>
 

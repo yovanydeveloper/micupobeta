@@ -1,10 +1,18 @@
 page-registro4 {
-  
+ 
+.imagen_perfil {
+  border-radius: 50%;
+  width: 12em;
+    height: 12em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-radius: 50%;
+}
    .izquierda{
 
 font-size: 2em;
 margin-left: 10%;
-margin-top: 10%; 
+margin-top: 5%; 
   }
 
   .fondo{
@@ -20,7 +28,7 @@ h2{
       text-align: center;
 }
   .formulario{
-    margin-top: 15%;
+    margin-top: 10%;
     text-align: center;
   ion-icon{
         font-size: 15em;

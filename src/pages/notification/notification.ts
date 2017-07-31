@@ -16,6 +16,5 @@ export class NotificationPage {
   public notifications:any;
 
   constructor(public nav: NavController, public notificationService: NotificationService) {
-    this.notifications = notificationService.getAll();
   }
 }

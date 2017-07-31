@@ -28,19 +28,22 @@ export class MyApp {
     {
       title: 'Inicio',
       icon: 'ios-home-outline',
-      count: 0,
+      component: HomePage
+    },
+     {
+      title: 'Perfil',
+      icon: 'ios-person-outline',
       component: HomePage
     },
     {
       title: 'Mis viajes',
       icon: 'ios-notifications-outline',
-      count: 3,
+      count: 4,
       component: NotificationPage
     },
     {
       title: 'Cerrar Sesion',
       icon: 'ios-log-out-outline',
-      count: 0,
       component: LoginPage
     }
   ];

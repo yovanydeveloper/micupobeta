@@ -1,14 +1,14 @@
 
 <ion-menu [content]="content">
   <ion-content class="menu-left"> 
-    <div text-center padding-top padding-bottom class="primary-bg menu-left">
+    <div text-center padding-top padding-bottom class="menutop" >
       <a menuClose>
         <img class="profile-picture" src="assets/img/thumb/user.png">
-        <h4 ion-text light color="white">Luis Arboleda</h4>
+        <h4 ion-text light color="white">Nombre y Apellido</h4>
       </a>
     </div>
 
-    <ion-list class="list-full-border">
+    <ion-list class="list-full-border" no-lines>
       <button ion-item menuClose *ngFor="let page of pages" (click)="openPage(page)">
         <ion-icon item-left name="{{ page.icon }}"></ion-icon>
         {{ page.title }}

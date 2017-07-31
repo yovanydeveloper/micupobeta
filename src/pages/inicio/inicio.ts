@@ -46,7 +46,13 @@ ionViewDidLoad() {
   ionViewDidLeave() {
     // enable the root left menu when leaving the tutorial page
     this.menu.enable(true);
-  }  
+  } 
+
+  ionViewCanEnter() {
+   
+    this.menu.enable(false);
+  }
+    
 }
 
 

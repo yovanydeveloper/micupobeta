@@ -1,11 +1,5 @@
-<!--
-  Generated template for the NotificationPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-  <ion-navbar color="primary" >
+  <ion-navbar color="fondo" >
     <button  ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -13,12 +7,114 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list class="list-full-border">
-    <ion-item *ngFor="let noti of notifications">
-      <ion-icon name="ios-mail-outline" color="primary"  item-left></ion-icon>
-      <div [ngClass]="{'bold': !noti.read}">{{ noti.title }}</div>
-      <span>{{ noti.createdAt }}</span>
-    </ion-item>
-  </ion-list>
+<ion-content class="cards-bg">
+
+<ion-card class="adv-map">
+  <ion-item>
+    <ion-icon color="fondo" large item-start name='pin'></ion-icon>
+    <h2>Destino</h2>
+    <p>la pradera, dosquebradas, Risaralda</p>
+      <button ion-button color="danger" clear item-end icon-start>
+      <ion-icon name='navigate'></ion-icon>
+    </button>
+  </ion-item>
+  <div style="position: relative">
+    <img src="assets/img/rutas.jpg">
+  </div>
+  
+  <ion-item actions>
+    <ion-row>
+        <p ion-text item-start color="fondo" class="item-bold">ayer 2:30pm</p>
+        <p ion-text item-start color="subtle">26 min</p>
+        <p ion-text item-start color="subtle">(8.1 km)</p>
+        <ion-col text-right>  
+         <span ion-text item-end-start color="danger" class="item-bold">$ 2000</span>
+        </ion-col>
+    </ion-row>
+
+  
+  </ion-item>
+
+</ion-card>
+
+<ion-card class="adv-map">
+  <ion-item>
+    <ion-icon color="green" large item-start name='pin'></ion-icon>
+    <h2>Destino</h2>
+    <p>Alfonso Lopez, Pereira, Risaralda </p>
+   <button ion-button color="danger" clear item-end icon-start>
+      <ion-icon name='navigate'></ion-icon>
+    </button>
+  </ion-item>
+  <div style="position: relative">
+    <img src="assets/img/rutas.jpg">
+  </div>
+  
+  <ion-item actions>
+      <ion-row>
+    <p ion-text item-start color="fondo" class="item-bold">ayer 7:00pm</p>
+    <p ion-text item-start color="subtle">16 min</p>
+    <p ion-text item-start color="subtle">(3.1 km)</p>
+        <ion-col text-right>  
+         <span ion-text item-end-start color="danger" class="item-bold">$ 2000</span>
+        </ion-col>
+      </ion-row>
+  </ion-item>
+
+</ion-card>
+
+<ion-card class="adv-map">
+  <ion-item>
+    <ion-icon color="danger" large item-start name='pin'></ion-icon>
+    <h2>Destino</h2>
+    <p>Guayacanes, Cuba, Pereira, Risaralda</p>
+  <button ion-button color="danger" clear item-end icon-start>
+      <ion-icon name='navigate'></ion-icon>
+    </button>
+  </ion-item>
+  <div style="position: relative">
+    <img src="assets/img/rutas.jpg">
+  </div>
+  
+  <ion-item actions>
+    <ion-row>
+    <p ion-text item-start color="fondo" class="item-bold">martes 4:30pm</p>
+    <p ion-text item-start color="subtle">46 min</p>
+    <p ion-text item-start color="subtle">(12.1 km)</p>
+    <ion-col text-right>  
+         <span ion-text item-end-start color="danger" class="item-bold">$ 4000</span>
+    </ion-col>
+   </ion-row>
+  </ion-item>
+
+</ion-card>
+
+
+<ion-card class="adv-map">
+  <ion-item>
+    <ion-icon color="primary" large item-start name='pin'></ion-icon>
+    <h2>Destino</h2>
+    <p>Capilla, Santa Rosa, Risaralda</p>
+  <button ion-button color="danger" clear item-end icon-start>
+      <ion-icon name='navigate'></ion-icon>
+    </button>
+  </ion-item>
+  <div style="position: relative">
+    <img src="assets/img/rutas.jpg">
+  </div>
+  
+  <ion-item actions>
+    <ion-row>
+    <p ion-text item-start color="fondo" class="item-bold">lunes 5:02pm</p>
+    <p ion-text item-start color="subtle">54 min</p>
+    <p ion-text item-start color="subtle">(20.1 km)</p>
+    <ion-col text-right>  
+         <span ion-text item-end-start color="danger" class="item-bold">$ 6000</span>
+    </ion-col>
+   </ion-row>
+  </ion-item>
+
+</ion-card>
+
+
 </ion-content>

@@ -1,18 +1,28 @@
-<ion-content class="fondo" disabled-scroll>
-<ion-row>
-      <ion-icon class="izquierda" name="arrow-round-back" color="white" (click)="signup()"></ion-icon>
-  </ion-row>
-<div class="formulario">
-    <h2>Añade una foto de perfil</h2>        
-           <ion-icon name="contact" item-center color="white"></ion-icon>
-          <br> 
-    <ion-row justify-content-center >
-         <button class="entrar" ion-button full color="green" type="submit" round>
-          AÑADIR FOTO
-        </button>              
-              <a class="olvidar" ion-button block clear (click)="login()" color="white">
-              Omitir
-              </a>
-    </ion-row>
-</div>
+<ion-content padding class="fondo" disabled-scroll>
+            <ion-row>
+                <ion-icon class="izquierda" name="arrow-round-back" color="white" (click)="signup()"></ion-icon>
+            </ion-row>
+                    <div class="formulario">
+                        <h2>Añade una foto de perfil</h2>        
+                            
+                            <img class="imagen_perfil" src="assets/img/thumb/user.png">
+                        
+                            <ion-list>
+                                <ion-item *ngIf="imgPreview">
+                                        <img [src]="imgPreview">
+                                </ion-item>
+                           </ion-list> <br>
+
+                                <ion-row justify-content-center >
+                            
+                                    <button class="entrar" ion-button full color="green" (click)="seleccionar_fotos()" round>
+                                    AÑADIR FOTO
+                                    </button>              
+                            
+                                    <a class="olvidar" ion-button block clear (click)="login()" color="white">
+                                        Omitir
+                                        </a>
+                            
+                                    </ion-row>
+                    </div>
 </ion-content>
